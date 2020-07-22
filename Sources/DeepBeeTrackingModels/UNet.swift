@@ -5,12 +5,16 @@ public struct UNet: Layer {
         public var conv: Conv2D<Float>
         public var bn: BatchNorm<Float>
 
-        init(filterShape: (Int, Int, Int, Int)) {
+        public init(filterShape: (Int, Int, Int, Int)) {
             self.conv = Conv2D(filterShape: filterShape, padding: .same)
             self.bn = BatchNorm(featureCount: filterShape.3)
         }
 
-        func callAsFunction(_ input: Tensor<Float>) -> Tensor<Float> {
+        public typealias Input = Tensor<Float>
+        public typealias Output = Tensor<Float>
+
+        @differentiable
+        public func callAsFunction(_ input: Tensor<Float>) -> Tensor<Float> {
             return relu(input.sequenced(through: conv, bn))
         }
     }
