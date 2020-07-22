@@ -5,7 +5,9 @@ import PackageDescription
 let package = Package(
   name: "DeepBeeTracking",
   products: [
-    .executable(name: "TrainUNet", targets: ["TrainUNet"])
+    .executable(name: "TrainUNet", targets: ["TrainUNet"]),
+    .library(name: "DeepBeeTrackingDatasets", targets: ["DeepBeeTrackingDatasets"]),
+    .library(name: "DeepBeeTrackingModels", targets: ["DeepBeeTrackingModels"]),
   ],
   dependencies: [
     .package(url: "https://github.com/tensorflow/swift-models.git", .branch("marcrasi-patch-1")),
