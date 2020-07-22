@@ -52,13 +52,13 @@ extension UNet {
   }
 
   public mutating func load(_ loader: CheckpointReader) {
-    encoderConv1.load(loader, prefix: "/encoverConv1")
-    encoderConv2.load(loader, prefix: "/encoverConv2")
-    encoderConv3.load(loader, prefix: "/encoverConv3")
-    encoderConv4.load(loader, prefix: "/encoverConv4")
-    decoderConv1.load(loader, prefix: "/encoverConv1")
-    decoderConv2.load(loader, prefix: "/encoverConv2")
-    decoderConv3.load(loader, prefix: "/encoverConv3")
-    decoderConv4.load(loader, prefix: "/encoverConv4")
+    encoderConv1.load(loader, prefix: "/encoderConv1")
+    encoderConv2.load(loader, prefix: "/encoderConv2")
+    encoderConv3.load(loader, prefix: "/encoderConv3")
+    encoderConv4.load(loader, prefix: "/encoderConv4")
+    decoderConv1.load(loader, prefix: "/decoderConv1")
+    decoderConv2.load(loader, prefix: "/decoderConv2")
+    decoderConv3.load(loader, prefix: "/decoderConv3")
+    decoderConv4.load(loader, prefix: "/decoderConv4")
   }
 }
