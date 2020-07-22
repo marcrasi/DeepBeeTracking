@@ -1,9 +1,9 @@
 import TensorFlow
 
 public struct UNet: Layer {
-    struct ConvBlock: Layer {
-        var conv: Conv2D<Float>
-        var bn: BatchNorm<Float>
+    public struct ConvBlock: Layer {
+        public var conv: Conv2D<Float>
+        public var bn: BatchNorm<Float>
 
         init(filterShape: (Int, Int, Int, Int)) {
             self.conv = Conv2D(filterShape: filterShape, padding: .same)

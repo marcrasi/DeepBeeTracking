@@ -15,13 +15,13 @@ extension Conv2D {
 
 extension BatchNorm {
   func save(prefix: String, to tensors: inout [String: Tensor<Scalar>]) {
-    tensors[prefix + "/offset"] = offset
-    tensors[prefix + "/scale"] = scale
+    tensors[prefix + "/runningMean"] = runningMean
+    tensors[prefix + "/runningVariance"] = runningVariance
   }
 
   mutating func load(_ loader: CheckpointReader, prefix: String) {
-    offset = Tensor(loader.loadTensor(named: prefix + "/offset"))
-    scale = Tensor(loader.loadTensor(named: prefix + "/scale"))
+    runningMean = Tensor(loader.loadTensor(named: prefix + "/runningMean"))
+    runningVariance = Tensor(loader.loadTensor(named: prefix + "/runningVariance"))
   }
 }
 
