@@ -10,7 +10,7 @@ let package = Package(
     .library(name: "DeepBeeTrackingModels", targets: ["DeepBeeTrackingModels"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/tensorflow/swift-models.git", .branch("marcrasi-patch-1")),
+    .package(url: "https://github.com/tensorflow/swift-models.git", .branch("master")),
   ],
   targets: [
     .target(

@@ -23,8 +23,8 @@
         "package": "swift-models",
         "repositoryURL": "https://github.com/tensorflow/swift-models.git",
         "state": {
-          "branch": "marcrasi-patch-1",
-          "revision": "1a9536ea05035eeaaaf95932703252fe39fa9a04",
+          "branch": "master",
+          "revision": "99f323e550f7f0c3ed32d31a3c5d11a0f3c51e4b",
           "version": null
         }
       },
