@@ -29,7 +29,7 @@ let segmentations = BeeFrameSegmentations()
 var model = UNet()
 var opt = Adam(for: model, learningRate: 1e-4)
 
-for epoch in 0..<50 {
+for epoch in 0..<30 {
   print("Running epoch \(epoch)")
   for segmentation in segmentations.train {
     Context.local.learningPhase = .training

@@ -7,7 +7,10 @@ public struct UNet: Layer {
 
         public init(filterShape: (Int, Int, Int, Int)) {
             self.conv = Conv2D(filterShape: filterShape, padding: .same)
-            self.bn = BatchNorm(featureCount: filterShape.3)
+
+            // Relatively small momentum because we currently don't do enough training steps to
+            // converge to correct running mean and variance when the momentum is large.
+            self.bn = BatchNorm(featureCount: filterShape.3, momentum: 0.8)
         }
 
         public typealias Input = Tensor<Float>
